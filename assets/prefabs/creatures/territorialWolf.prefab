@@ -8,7 +8,7 @@
   },
   "TerritoryDistance": {
   },
-  "GroupTag" : {
+  "engine:GroupTag" : {
     "groups" : [ "territorial" ]
   },
   "Behavior": {

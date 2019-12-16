@@ -61,7 +61,7 @@ public class InitialBehaviorSystem extends BaseComponentSystem {
         for (EntityRef entityRef : entityManager.getEntitiesWith(WildAnimalComponent.class, BehaviorComponent.class)) {
             logger.info("Assigning behavior to a wild animal based on the following prefab: " + entityRef.getParentPrefab().getName());
             assignBehaviorToEntity(entityRef, behavior);
-            logger.info("Behavior assigned:" + behavior);
+            logger.info("Behavior assigned: " + behavior);
         }
         return "All wild animals should have the same behavior now.";
     }
@@ -69,7 +69,7 @@ public class InitialBehaviorSystem extends BaseComponentSystem {
     @Command(shortDescription = "Assigns wild animals in the \"territorial\" group the behavior \"territorialCritter\".")
     public String assignGroupBehavior() {
         String group = "territorial";
-        String behavior = "BehaviorsBasic:territorialCritter";
+        String behavior = "Behaviors:critter";
         for (EntityRef entityRef : entityManager.getEntitiesWith(WildAnimalComponent.class, GroupTagComponent.class, BehaviorComponent.class)) {
             GroupTagComponent groupTag = entityRef.getComponent(GroupTagComponent.class);
             if (!groupTag.groups.contains(group)) {
@@ -85,7 +85,7 @@ public class InitialBehaviorSystem extends BaseComponentSystem {
 
             assignBehaviorToEntity(entityRef, behavior);
 
-            logger.info("Behavior assigned:" + behavior);
+            logger.info("Behavior assigned: " + behavior);
         }
         return "All the animals in the group should have the same behavior now.";
     }
